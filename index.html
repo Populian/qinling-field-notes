@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#f2f2f7" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="田野笔记" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <title>QINLING FIELD NOTES</title>
+    <script>
+      // Apply the saved appearance before first paint (no light/dark flash on launch).
+      (function () {
+        try {
+          var a = localStorage.getItem('qfn.appearance') || 'system';
+          var dark = a === 'dark' || (a === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-COnJ9Avn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CSfE_ptl.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
